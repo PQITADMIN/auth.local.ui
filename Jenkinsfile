@@ -5,7 +5,6 @@ pipeline{
 	environment {
         containerName = 'auth.valuestory.ui.dev'
         imageName    = 'auth.valuestory.ui:${BUILD_NUMBER}'
-		
 	}
 	stages {
 
@@ -21,7 +20,7 @@ pipeline{
 		}
 		stage('Build') {
 			steps {
-				sh 'docker build --build-arg REACT_APP_AUTH_VALUESTORY_API_BASE_URL=${{ secrets.REACT_APP_AUTH_VALUESTORY_API_BASE_URL }} -t $imageName .'
+				sh 'docker build -t $imageName .'
 			}
 		}
 		stage('Deploy') {
