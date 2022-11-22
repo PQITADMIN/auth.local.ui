@@ -6,7 +6,7 @@ pipeline{
         containerName = 'auth.valuestory.ui.dev'
         imageName    = 'auth.valuestory.ui:${BUILD_NUMBER}'
 		
-
+	}
 	stages {
 
 		stage('Kill') {
