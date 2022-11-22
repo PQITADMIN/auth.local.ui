@@ -3,7 +3,7 @@ pipeline{
 	agent {label 'valuestory-io-dev'}
 
 	environment {
-        BUILD_NUMBER = ${env.BUILD_NUMBER}
+        BUILD_NUMBER = ''
 	containerName = 'auth.valuestory.ui.dev'
         imageName    = 'auth.valuestory.ui'
 	}
