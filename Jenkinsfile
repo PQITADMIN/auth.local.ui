@@ -3,8 +3,9 @@ pipeline{
 	agent {label 'valuestory-io-dev'}
 
 	environment {
-        containerName = 'auth.valuestory.ui.dev'
-        imageName    = 'auth.valuestory.ui:$BUILD_NUMBER'
+        Build Number = ''
+	containerName = 'auth.valuestory.ui.dev'
+        imageName    = 'auth.valuestory.ui'
 	}
 	stages {
 
@@ -20,7 +21,7 @@ pipeline{
 		}
 		stage('Build') {
 			steps {
-				sh 'docker build -t $imageName .'
+				sh 'docker build -t $imageName:${env.BUILD_NUMBER} .'
 			}
 		}
 		stage('Deploy') {
