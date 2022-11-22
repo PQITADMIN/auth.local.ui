@@ -20,12 +20,12 @@ pipeline{
 		}
 		stage('Build') {
 			steps {
-				sh 'docker build -t $imageName:$buildnumber .'
+				sh 'docker build -t $imageName .'
 			}
 		}
 		stage('Deploy') {
 			steps {
-				sh 'docker run -p 5000:80 -d --name $containerName $imageName:$buildnumber'
+				sh 'docker run -p 5000:80 -d --name $containerName $imageName'
 			}
 		}
 
