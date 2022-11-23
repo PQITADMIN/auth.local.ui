@@ -1,6 +1,6 @@
 pipeline{
 
-	agent {label 'valuestory-io-dev'}
+	agent {label 'docker-test'}
 
 	environment {
 	containerName = 'auth.valuestory.ui.dev'
@@ -25,7 +25,7 @@ pipeline{
 		}
 		stage('Deploy') {
 			steps {
-				sh 'docker run -p 5000:80 -d --name $containerName $imageName'
+				sh 'docker run -p 91:80 -d --name $containerName $imageName'
 			}
 		}
 
