@@ -18,7 +18,7 @@ ENV REACT_APP_AUTH_VALUESTORY_API_BASE_URL $REACT_APP_AUTH_VALUESTORY_API_BASE_U
 # build your node project
 RUN npm run build
 
-# RUN ./node_modules/javascript-obfuscator/bin/javascript-obfuscator build --output build --compact true --debug-protection true --debug-protection-interval 3000  --disable-console-output true --numbers-to-expressions true --self-defending true --split-strings true  --split-strings-chunk-length 15  --transform-object-keys true --string-array true --string-array-calls-transform true --string-array-calls-transform-threshold 0.9 
+RUN ./node_modules/javascript-obfuscator/bin/javascript-obfuscator build --output build --compact true --debug-protection true --debug-protection-interval 3000  --disable-console-output true --numbers-to-expressions true --self-defending true --split-strings true  --split-strings-chunk-length 15  --transform-object-keys true --string-array true --string-array-calls-transform true --string-array-calls-transform-threshold 0.9 
 
 # Stage 2
 # Install Nginx
