@@ -20,12 +20,12 @@ pipeline{
 		}
 		stage('Build') {
 			steps {
-				sh 'docker build -t $imageName .'
+				sh 'docker build --build-arg REACT_APP_AUTH_VALUESTORY_API_BASE_URL=$REACT_APP_AUTH_VALUESTORY_API_BASE_URL -t $imageName .'
 			}
 		}
 		stage('Deploy') {
 			steps {
-				sh 'docker run -p 91:80 -d --name $containerName $imageName'
+				sh 'docker run -d -e REACT_APP_AUTH_VALUESTORY_API_BASE_URL=$REACT_APP_AUTH_VALUESTORY_API_BASE_URL  -p 91:80 --name $containerName $imageName'
 			}
 		}
 
