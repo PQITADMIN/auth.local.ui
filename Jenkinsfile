@@ -1,6 +1,6 @@
 pipeline{
 
-	agent {label 'docker-test'}
+	agent {label 'auth.valuestory-dev'}
 
 	environment {
 	containerName = 'auth.valuestory.ui.dev'
